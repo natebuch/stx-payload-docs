@@ -1,0 +1,23 @@
+{
+  "chain": "stacks",
+  "uuid": "1",
+  "name": "hello-test chainhook",
+  "version": 1,
+  "networks": {
+    "devnet": {
+      "start_block": 0,
+      "end_block": 100,
+      "if_this": {
+        "scope": "contract_call",
+        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+        "method": "mint-ft"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "http://localhost:3000/api/mint-ft",
+          "authorization_header": "1234"
+        }
+      } 	
+    }
+	}
+}
