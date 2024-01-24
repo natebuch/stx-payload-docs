@@ -1,0 +1,271 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 0,
+                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+            },
+            "parent_block_identifier": {
+                "index": 0,
+                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+            },
+            "timestamp": 1706067767,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x254a5feb74e9286c395a804eff2d6ba096abcdffc9f29f54e05b4738e1888204"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 1
+                                }
+                            ],
+                            "type": "DEBIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "value": 50,
+                                "currency": {
+                                    "symbol": "STX",
+                                    "decimals": 6
+                                }
+                            }
+                        },
+                        {
+                            "operation_identifier": {
+                                "index": 1
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 0
+                                }
+                            ],
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                            },
+                            "amount": {
+                                "value": 50,
+                                "currency": {
+                                    "symbol": "STX",
+                                    "decimals": 6
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0000000000000004000000000000010200008c2a34aabf4a27b65501b80e6d1e12eac36a3d03baf70c11d057de8b7fd3219b0caa9096dcfa00fa3f4a7bbba54a957bef9f1e3d2e3cd63cab4ee445ed6ce27f03020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000002faf080021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730873656e642d737478000000030100000000000000000000000000000032051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051a7321b74e2b6a7e949e6c4ad313035b1665095017",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 4,
+                        "fee": 258,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "send-stx",
+                                "args": [
+                                    "u50",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [],
+                            "mutated_assets_radius": [],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "STXTransferEvent",
+                                    "data": {
+                                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                        "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
+                                        "amount": "50"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx(u50, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 1,
+                            "read_length": 708,
+                            "read_count": 4,
+                            "runtime": 6794
+                        },
+                        "position": {
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+                            },
+                            "index": 0
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "anchor_block_identifier": {
+                    "index": 49,
+                    "hash": "0x51ea047ef0b82ccdbbc499fb0e01ab29c15253d623288c19d2e08fb7f34e2405"
+                }
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "send-stx"
+        },
+        "is_streaming_blocks": true
+    }
+}
+
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 0,
+                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+            },
+            "parent_block_identifier": {
+                "index": 0,
+                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+            },
+            "timestamp": 1706067767,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x254a5feb74e9286c395a804eff2d6ba096abcdffc9f29f54e05b4738e1888204"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 1
+                                }
+                            ],
+                            "type": "DEBIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "value": 50,
+                                "currency": {
+                                    "symbol": "STX",
+                                    "decimals": 6
+                                }
+                            }
+                        },
+                        {
+                            "operation_identifier": {
+                                "index": 1
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 0
+                                }
+                            ],
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                            },
+                            "amount": {
+                                "value": 50,
+                                "currency": {
+                                    "symbol": "STX",
+                                    "decimals": 6
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0000000000000004000000000000010200008c2a34aabf4a27b65501b80e6d1e12eac36a3d03baf70c11d057de8b7fd3219b0caa9096dcfa00fa3f4a7bbba54a957bef9f1e3d2e3cd63cab4ee445ed6ce27f03020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000002faf080021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730873656e642d737478000000030100000000000000000000000000000032051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051a7321b74e2b6a7e949e6c4ad313035b1665095017",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 4,
+                        "fee": 258,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "send-stx",
+                                "args": [
+                                    "u50",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [],
+                            "mutated_assets_radius": [],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "STXTransferEvent",
+                                    "data": {
+                                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                        "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
+                                        "amount": "50"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx(u50, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 1,
+                            "read_length": 708,
+                            "read_count": 4,
+                            "runtime": 6794
+                        },
+                        "position": {
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0x53bf0380bfaa6c31c1b8abf8b908842773b61dd3ebbafdfa9815e2f883014da7"
+                            },
+                            "index": 0
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "anchor_block_identifier": {
+                    "index": 49,
+                    "hash": "0x51ea047ef0b82ccdbbc499fb0e01ab29c15253d623288c19d2e08fb7f34e2405"
+                }
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "send-stx"
+        },
+        "is_streaming_blocks": true
+    }
+}

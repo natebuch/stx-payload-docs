@@ -15,7 +15,7 @@
       },
       "then_that": {
 		    "http_post": {
-          "url": "http://localhost:3000/api/decode/hello",
+          "url": "http://localhost:3001/api/decode/hello",
           "authorization_header": "1234"
         }
 	    }	

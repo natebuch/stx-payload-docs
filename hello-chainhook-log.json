@@ -1,0 +1,176 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 0,
+                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+            },
+            "parent_block_identifier": {
+                "index": 0,
+                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+            },
+            "timestamp": 1706036461,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x32ac8659979142340d54de89df5b3c806d1297f0cf2ee379fb9478135de0499c"
+                    },
+                    "operations": [],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000300000000000006cc00010b1e2a8b3a0ef8ce0f67ad3a9f3d0526076e3b878d84c43972c0ae1fcc848d965291c50241ffbcc1299c5332e9c354aaff854244627156c97e4323f277d4ec26030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730568656c6c6f00000000",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 3,
+                        "fee": 1740,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "hello",
+                                "args": []
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "SmartContractEvent",
+                                    "data": {
+                                        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                        "topic": "print",
+                                        "value": "Hello World!"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::hello()",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 0,
+                            "write_count": 0,
+                            "read_length": 707,
+                            "read_count": 3,
+                            "runtime": 2887
+                        },
+                        "position": {
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+                            },
+                            "index": 0
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "anchor_block_identifier": {
+                    "index": 97,
+                    "hash": "0x5dda796e678fe6b9795a0f1438ee207fcc01868c89af9c46dc3a7bae4c27ea0c"
+                }
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "hello"
+        },
+        "is_streaming_blocks": true
+    }
+}
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 0,
+                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+            },
+            "parent_block_identifier": {
+                "index": 0,
+                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+            },
+            "timestamp": 1706036461,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x32ac8659979142340d54de89df5b3c806d1297f0cf2ee379fb9478135de0499c"
+                    },
+                    "operations": [],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000300000000000006cc00010b1e2a8b3a0ef8ce0f67ad3a9f3d0526076e3b878d84c43972c0ae1fcc848d965291c50241ffbcc1299c5332e9c354aaff854244627156c97e4323f277d4ec26030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730568656c6c6f00000000",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 3,
+                        "fee": 1740,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "hello",
+                                "args": []
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "SmartContractEvent",
+                                    "data": {
+                                        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                        "topic": "print",
+                                        "raw_value": "0x0d0000000c48656c6c6f20576f726c6421"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::hello()",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 0,
+                            "write_count": 0,
+                            "read_length": 707,
+                            "read_count": 3,
+                            "runtime": 2887
+                        },
+                        "position": {
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0x480df52478aaeb4a2c0840e92f518eccb85e96356dbc6bf968a414453ad7be02"
+                            },
+                            "index": 0
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "anchor_block_identifier": {
+                    "index": 97,
+                    "hash": "0x5dda796e678fe6b9795a0f1438ee207fcc01868c89af9c46dc3a7bae4c27ea0c"
+                }
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "hello"
+        },
+        "is_streaming_blocks": true
+    }
+}

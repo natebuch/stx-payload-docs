@@ -14,7 +14,7 @@
       },
       "then_that": {
         "http_post": {
-          "url": "http://localhost:3000/api/mint-ft",
+          "url": "http://localhost:3001/api/mint-ft",
           "authorization_header": "1234"
         }
       } 	

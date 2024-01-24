@@ -1,0 +1,241 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 19,
+                "hash": "0x838b42582e344e05b38e64785e26ddf8964a2a47c17f02c51683d275e947626b"
+            },
+            "parent_block_identifier": {
+                "index": 18,
+                "hash": "0x5bf34545c99137b164c5429c5e30ea130fd3b58a850791a7807f2940cc7011dc"
+            },
+            "timestamp": 1706065907,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0xb647f63040db55eb6831b1641fe34b270341cc2859761acfe5fb34dcc13a7632"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "value": 100,
+                                "currency": {
+                                    "symbol": "TOKEN",
+                                    "decimals": 6,
+                                    "metadata": {
+                                        "asset_class_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft",
+                                        "asset_identifier": null,
+                                        "standard": "SIP10"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000200000000000004ff00015b534c8b4754d2da3f12057d4f0045f44355961427e2078eff64f10795037c955e88e6b2da2701108b27b880c0b30848e11a266a09fff075bf051c8399bc25fa030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e73076d696e742d6674000000020100000000000000000000000000000064051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 2,
+                        "fee": 1279,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "mint-ft",
+                                "args": [
+                                    "u100",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft"
+                            ],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "FTMintEvent",
+                                    "data": {
+                                        "asset_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft",
+                                        "recipient": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                        "amount": "100"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::mint-ft(u100, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 2,
+                            "read_length": 708,
+                            "read_count": 5,
+                            "runtime": 3008
+                        },
+                        "position": {
+                            "index": 1
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "index": 121,
+                    "hash": "0x5c45e7b8fe6aa338c2097a9a55cf28b1a37d69513806bff29e537b832391eb4d"
+                },
+                "pox_cycle_index": 2,
+                "pox_cycle_position": 0,
+                "pox_cycle_length": 10,
+                "confirm_microblock_identifier": {
+                    "index": 0,
+                    "hash": "0x69370f8df5b05cd3a1ef304e6777d9eb760b6960cc200ca78f4f7ebea76a0ea1"
+                },
+                "stacks_block_hash": "0xb5d91248250ecfeffcec177059bc0fbcc91be16bc4528588915fd4f760b873aa"
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "mint-ft"
+        },
+        "is_streaming_blocks": true
+    }
+}
+
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 19,
+                "hash": "0x838b42582e344e05b38e64785e26ddf8964a2a47c17f02c51683d275e947626b"
+            },
+            "parent_block_identifier": {
+                "index": 18,
+                "hash": "0x5bf34545c99137b164c5429c5e30ea130fd3b58a850791a7807f2940cc7011dc"
+            },
+            "timestamp": 1706065907,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0xb647f63040db55eb6831b1641fe34b270341cc2859761acfe5fb34dcc13a7632"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "value": 100,
+                                "currency": {
+                                    "symbol": "TOKEN",
+                                    "decimals": 6,
+                                    "metadata": {
+                                        "asset_class_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft",
+                                        "asset_identifier": null,
+                                        "standard": "SIP10"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000200000000000004ff00015b534c8b4754d2da3f12057d4f0045f44355961427e2078eff64f10795037c955e88e6b2da2701108b27b880c0b30848e11a266a09fff075bf051c8399bc25fa030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e73076d696e742d6674000000020100000000000000000000000000000064051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 2,
+                        "fee": 1279,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "mint-ft",
+                                "args": [
+                                    "u100",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft"
+                            ],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "FTMintEvent",
+                                    "data": {
+                                        "asset_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-ft",
+                                        "recipient": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                        "amount": "100"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::mint-ft(u100, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 2,
+                            "read_length": 708,
+                            "read_count": 5,
+                            "runtime": 3008
+                        },
+                        "position": {
+                            "index": 1
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "index": 121,
+                    "hash": "0x5c45e7b8fe6aa338c2097a9a55cf28b1a37d69513806bff29e537b832391eb4d"
+                },
+                "pox_cycle_index": 2,
+                "pox_cycle_position": 0,
+                "pox_cycle_length": 10,
+                "confirm_microblock_identifier": {
+                    "index": 0,
+                    "hash": "0x69370f8df5b05cd3a1ef304e6777d9eb760b6960cc200ca78f4f7ebea76a0ea1"
+                },
+                "stacks_block_hash": "0xb5d91248250ecfeffcec177059bc0fbcc91be16bc4528588915fd4f760b873aa"
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "mint-ft"
+        },
+        "is_streaming_blocks": true
+    }
+}

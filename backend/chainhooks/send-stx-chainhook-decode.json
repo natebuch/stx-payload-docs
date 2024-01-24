@@ -15,7 +15,7 @@
       },
       "then_that": {
         "http_post": {
-          "url": "http://localhost:3000/api/decode/send-stx",
+          "url": "http://localhost:3001/api/decode/send-stx",
           "authorization_header": "1234"
         }
       } 	

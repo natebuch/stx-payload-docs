@@ -1,0 +1,6 @@
+markdown-preview --file README.md --template default --port 3002 --log-level info --no-opener
+Root Directory : /current/dir
+Default File   : README.md
+Extensions     : md, markdown
+Template File  : /Users/nb/code/stx/stx-payload-doc/backend/stx-payload-docs-template.txt
+Preview URL    : http://localhost:3002

@@ -1,0 +1,241 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 47,
+                "hash": "0xa04cf9aa1c86bda838305bd0c025dc718bf8eccc094f430b1ff362ba56f6b4ae"
+            },
+            "parent_block_identifier": {
+                "index": 46,
+                "hash": "0x2368186f94eb558c9793472c075b954f7a3e658dae4c04c183bf1c90b9d425c6"
+            },
+            "timestamp": 1706067587,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x8341571b4fb880b2f66ca76c52a7ce8df6adcae466c364361b76677012a74e1c"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                            },
+                            "amount": {
+                                "value": 1,
+                                "currency": {
+                                    "symbol": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                    "decimals": 0,
+                                    "metadata": {
+                                        "asset_class_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                        "asset_identifier": "0x0100000000000000000000000000000005",
+                                        "standard": "SIP09"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0000000000000003000000000000011c0001a1444ea641ed4780644afa2f46307f0bdf07289b3bebf9b594b5ba1de76d59471c300bcbd9487eb18794199fa3001f525703d714ccfcff32dcdc21f309ae40e103020000000102021a7321b74e2b6a7e949e6c4ad313035b16650950171a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e7307646f632d6e66740200000007646f632d6e667411021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e73086d696e742d6e6674000000020100000000000000000000000000000005051a7321b74e2b6a7e949e6c4ad313035b1665095017",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 3,
+                        "fee": 284,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "mint-nft",
+                                "args": [
+                                    "u5",
+                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft"
+                            ],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "NFTMintEvent",
+                                    "data": {
+                                        "asset_class_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                        "asset_identifier": 5,
+                                        "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::mint-nft(u5, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 1,
+                            "read_length": 708,
+                            "read_count": 4,
+                            "runtime": 2257
+                        },
+                        "position": {
+                            "index": 1
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "index": 149,
+                    "hash": "0x44d1b0b05e38d648b8388d6630d17ab7fb4f8d6a8d74f5f95e23f8049e897f97"
+                },
+                "pox_cycle_index": 4,
+                "pox_cycle_position": 8,
+                "pox_cycle_length": 10,
+                "confirm_microblock_identifier": {
+                    "index": 0,
+                    "hash": "0x6da0c33e888c793f5e04f559964f6e0fa5b110354327a23cc5c52e08bef984da"
+                },
+                "stacks_block_hash": "0xb9fb48943f388817da94fed5e374d5de443ea4bf58db8cbf87ad19cb9a0b555f"
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "mint-nft"
+        },
+        "is_streaming_blocks": true
+    }
+}
+                       
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 47,
+                "hash": "0xa04cf9aa1c86bda838305bd0c025dc718bf8eccc094f430b1ff362ba56f6b4ae"
+            },
+            "parent_block_identifier": {
+                "index": 46,
+                "hash": "0x2368186f94eb558c9793472c075b954f7a3e658dae4c04c183bf1c90b9d425c6"
+            },
+            "timestamp": 1706067587,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0x8341571b4fb880b2f66ca76c52a7ce8df6adcae466c364361b76677012a74e1c"
+                    },
+                    "operations": [
+                        {
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "type": "CREDIT",
+                            "status": "SUCCESS",
+                            "account": {
+                                "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                            },
+                            "amount": {
+                                "value": 1,
+                                "currency": {
+                                    "symbol": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                    "decimals": 0,
+                                    "metadata": {
+                                        "asset_class_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                        "asset_identifier": "0x0100000000000000000000000000000005",
+                                        "standard": "SIP09"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0000000000000003000000000000011c0001a1444ea641ed4780644afa2f46307f0bdf07289b3bebf9b594b5ba1de76d59471c300bcbd9487eb18794199fa3001f525703d714ccfcff32dcdc21f309ae40e103020000000102021a7321b74e2b6a7e949e6c4ad313035b16650950171a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e7307646f632d6e66740200000007646f632d6e667411021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e73086d696e742d6e6674000000020100000000000000000000000000000005051a7321b74e2b6a7e949e6c4ad313035b1665095017",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 3,
+                        "fee": 284,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+                                "method": "mint-nft",
+                                "args": [
+                                    "u5",
+                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions"
+                            ],
+                            "mutated_assets_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft"
+                            ],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "NFTMintEvent",
+                                    "data": {
+                                        "asset_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::doc-nft",
+                                        "raw_value": "0x0100000000000000000000000000000005",
+                                        "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::mint-nft(u5, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 1,
+                            "write_count": 1,
+                            "read_length": 708,
+                            "read_count": 4,
+                            "runtime": 2257
+                        },
+                        "position": {
+                            "index": 1
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "index": 149,
+                    "hash": "0x44d1b0b05e38d648b8388d6630d17ab7fb4f8d6a8d74f5f95e23f8049e897f97"
+                },
+                "pox_cycle_index": 4,
+                "pox_cycle_position": 8,
+                "pox_cycle_length": 10,
+                "confirm_microblock_identifier": {
+                    "index": 0,
+                    "hash": "0x6da0c33e888c793f5e04f559964f6e0fa5b110354327a23cc5c52e08bef984da"
+                },
+                "stacks_block_hash": "0xb9fb48943f388817da94fed5e374d5de443ea4bf58db8cbf87ad19cb9a0b555f"
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "1",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+            "method": "mint-nft"
+        },
+        "is_streaming_blocks": true
+    }
+}
