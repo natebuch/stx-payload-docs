@@ -1,6 +1,9 @@
 ## stx-payload-docs
 
-#### Contract Function
+| Print Contract Function | STX Transfer Contract Function | [FT Mint Contract Function](#FT-Mint-Contract-Function) | NFT Mint Contract Function |
+|---|---|---|---|
+
+#### FT Mint Contract Function
 ```
 (define-public (mint-ft (amount uint) (recipient principal))
   (ft-mint? doc-ft amount recipient)

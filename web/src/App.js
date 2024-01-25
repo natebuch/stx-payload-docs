@@ -31,7 +31,7 @@ const contractName = 'test-functions'
 //     (ok true)
 //   )
 // )
-const helloWorldFuncArgs = [];
+const helloWorldFuncArgs = [bufferCVFromString("Hello Worlds")];
 
 const helloWorldPostConditions = [];
 
@@ -148,6 +148,41 @@ const sendStx = {
   anchorMode: AnchorMode.Any,
 };
 
+// Clarity function
+// (define-public (send-stx-memo (amount uint) (sender principal) (recipient principal) (memo (buff 34)))
+//   (as-contract (stx-transfer-memo? amount sender recipient))
+// )
+const stxMemoConditionCode = FungibleConditionCode.LessEqual;
+const stxMemoConditionAmount = 50000000; // denoted in microstacks
+const postConditionAddressStxMemo = stxAddress //recipient
+
+
+const sendStxMemoFunctionArguments = [
+  uintCV(50),
+  standardPrincipalCV(stxAddress),
+  standardPrincipalCV(stxAddressTwo),
+  bufferCVFromString('memo test')
+];
+
+const sendStxMemoPostConditions = [
+  makeStandardSTXPostCondition(
+    postConditionAddressStxMemo, //the sender
+    stxMemoConditionCode,
+    stxMemoConditionAmount
+  )
+];
+
+const sendStxMemo = {
+  contractAddress: stxAddress,
+  contractName: contractName,
+  functionName: 'send-stx-memo',
+  functionArgs: sendStxMemoFunctionArguments,
+  postConditions: sendStxMemoPostConditions,
+  senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
+  network,
+  anchorMode: AnchorMode.Any,
+};
+
 function App() {
   const [ broadcastResponse, setBroadcastResponse ] = useState()
 
@@ -182,6 +217,9 @@ function App() {
       </div>
       <div>
         <button onClick={ () => handleGetTransaction(sendStx)}>Send STX</button>
+      </div>
+      <div>
+        <button onClick={ () => handleGetTransaction(sendStxMemo)}>Send STX Memo</button>
       </div>
       <div>
         {JSON.stringify(broadcastResponse)}

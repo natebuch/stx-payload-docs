@@ -21,9 +21,9 @@
 ;;
 
 ;; public functions
-(define-public (hello)
+(define-public (hello (memo (buff 34)))
   (begin 
-    (print "Hello World!")
+    (print memo)
     (ok true)
   )
 )
@@ -38,6 +38,10 @@
 
 (define-public (send-stx (amount uint) (sender principal) (recipient principal))
   (stx-transfer? amount sender recipient)
+)
+
+(define-public (send-stx-memo (amount uint) (sender principal) (recipient principal) (memo (buff 34)))
+  (stx-transfer-memo? amount sender recipient memo)
 )
 
 ;; read only functions
