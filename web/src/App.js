@@ -183,6 +183,34 @@ const sendStxMemo = {
   anchorMode: AnchorMode.Any,
 };
 
+// (define-public (send-stx-embedded-memo)
+//   (stx-transfer-memo? u100 tx-sender 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5 (unwrap-panic (to-consensus-buff? "Here lies memo")))
+// )
+const stxEmbeddedMemoConditionCode = FungibleConditionCode.LessEqual;
+const stxEmbeddedMemoConditionAmount = 100000000; // denoted in microstacks
+
+const sendStxEmbeddedMemoFunctionArguments = [
+];
+
+const sendStxEmbeddedMemoPostConditions = [
+  makeStandardSTXPostCondition(
+    postConditionAddressStxMemo, //the sender
+    stxEmbeddedMemoConditionCode,
+    stxEmbeddedMemoConditionAmount  
+  )
+];
+
+const sendStxEmbeddedMemo = {
+  contractAddress: stxAddress,
+  contractName: contractName,
+  functionName: 'send-stx-embedded-memo',
+  functionArgs: sendStxEmbeddedMemoFunctionArguments,
+  postConditions: sendStxEmbeddedMemoPostConditions,
+  senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
+  network,
+  anchorMode: AnchorMode.Any,
+};
+
 function App() {
   const [ broadcastResponse, setBroadcastResponse ] = useState()
 
@@ -220,6 +248,9 @@ function App() {
       </div>
       <div>
         <button onClick={ () => handleGetTransaction(sendStxMemo)}>Send STX Memo</button>
+      </div>
+      <div>
+        <button onClick={ () => handleGetTransaction(sendStxEmbeddedMemo)}>Send Embedded STX Memo</button>
       </div>
       <div>
         {JSON.stringify(broadcastResponse)}

@@ -1,20 +1,20 @@
-/////////////////////////////////////     Decode Start    /////////////////////////////////////
+/////////////////////////////////////     Start    /////////////////////////////////////
 {
     "apply": [
         {
             "block_identifier": {
-                "index": 16,
-                "hash": "0x0c127850a84d7e064c261a5c3bbb6f020ebd84e119a952a7f981b56886a1f30b"
+                "index": 0,
+                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
             },
             "parent_block_identifier": {
-                "index": 15,
-                "hash": "0x1fb0517da82fd3fd47a15ed9b2426a670d4221690e7d777126a16c4c20da7328"
+                "index": 0,
+                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
             },
-            "timestamp": 1706163098,
+            "timestamp": 1706245901,
             "transactions": [
                 {
                     "transaction_identifier": {
-                        "hash": "0xca464cd6e3a192b05f33eea6c0cbcb194aff6632662a766579776395df96b877"
+                        "hash": "0x8d7cab146390fbed19d62553dca1a4220ea563f95e62a3064dfc62f8abf3c635"
                     },
                     "operations": [
                         {
@@ -32,7 +32,7 @@
                                 "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
                             },
                             "amount": {
-                                "value": 50,
+                                "value": 100,
                                 "currency": {
                                     "symbol": "STX",
                                     "decimals": 6
@@ -54,7 +54,7 @@
                                 "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
                             },
                             "amount": {
-                                "value": 50,
+                                "value": 100,
                                 "currency": {
                                     "symbol": "STX",
                                     "decimals": 6
@@ -64,22 +64,17 @@
                     ],
                     "metadata": {
                         "success": true,
-                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000300000000000001150000ee77f4c83bab86e32764dece3fab8ae3ce480fb7a8d08a17491672a4c8fbc5821b8e1e69bbc476d5e3c375af98d0d0138786aafd9dab9561b074fbce9a7de21003020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000002faf080021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730d73656e642d7374782d6d656d6f000000040100000000000000000000000000000032051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051a7321b74e2b6a7e949e6c4ad313035b166509501702000000096d656d6f2074657374",
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000200000000000000d3000116dbb2e6fe0fd78d748b7d6b99fc1887c4274b4b3b53e5b4eafbd6bd76059f90779141f125dd180ed9d277f1c728747b272e9c8958ccda00f47eff1e77cd22d603020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000005f5e100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e731673656e642d7374782d656d6265646465642d6d656d6f00000000",
                         "result": "(ok true)",
                         "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-                        "nonce": 3,
-                        "fee": 277,
+                        "nonce": 2,
+                        "fee": 211,
                         "kind": {
                             "type": "ContractCall",
                             "data": {
                                 "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-                                "method": "send-stx-memo",
-                                "args": [
-                                    "u50",
-                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
-                                    "0x6d656d6f2074657374"
-                                ]
+                                "method": "send-stx-embedded-memo",
+                                "args": []
                             }
                         },
                         "receipt": {
@@ -92,39 +87,35 @@
                                     "data": {
                                         "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
                                         "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
-                                        "amount": "50"
+                                        "amount": "100"
                                     }
                                 }
                             ]
                         },
-                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx-memo(u50, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5, 0x6d656d6f2074657374)",
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx-embedded-memo()",
                         "sponsor": null,
                         "execution_cost": {
                             "write_length": 1,
                             "write_count": 1,
-                            "read_length": 866,
+                            "read_length": 1049,
                             "read_count": 4,
-                            "runtime": 7156
+                            "runtime": 6393
                         },
                         "position": {
-                            "index": 1
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
+                            },
+                            "index": 0
                         }
                     }
                 }
             ],
             "metadata": {
-                "bitcoin_anchor_block_identifier": {
-                    "index": 118,
-                    "hash": "0x3d6d46e231e26f38595ed517321f7a5109f307061f13d5a04e5f347d8046309a"
-                },
-                "pox_cycle_index": 1,
-                "pox_cycle_position": 7,
-                "pox_cycle_length": 10,
-                "confirm_microblock_identifier": {
-                    "index": 0,
-                    "hash": "0x117d7b29ced1caccf2628f75a2d53d754d1d8e19181de9d5b15aac30dd62a232"
-                },
-                "stacks_block_hash": "0xf7f665d40cf4aedeff586867293a5382526ba7fa123ce50bb6e31e0249d9c900"
+                "anchor_block_identifier": {
+                    "index": 8,
+                    "hash": "0x46e44007341cd2b2e9cb8992680d4f994ab1d0d66f1a935ab32ed5ab4df8992f"
+                }
             }
         }
     ],
@@ -134,7 +125,7 @@
         "predicate": {
             "scope": "contract_call",
             "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-            "method": "send-stx-memo"
+            "method": "send-stx-embedded-memo"
         },
         "is_streaming_blocks": true
     }
@@ -142,23 +133,23 @@
                        
 **********************************************************************************************************
                        
-/////////////////////////////////////     Start    /////////////////////////////////////
+/////////////////////////////////////     Decode Start    /////////////////////////////////////
 {
     "apply": [
         {
             "block_identifier": {
-                "index": 16,
-                "hash": "0x0c127850a84d7e064c261a5c3bbb6f020ebd84e119a952a7f981b56886a1f30b"
+                "index": 0,
+                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
             },
             "parent_block_identifier": {
-                "index": 15,
-                "hash": "0x1fb0517da82fd3fd47a15ed9b2426a670d4221690e7d777126a16c4c20da7328"
+                "index": 0,
+                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
             },
-            "timestamp": 1706163098,
+            "timestamp": 1706245901,
             "transactions": [
                 {
                     "transaction_identifier": {
-                        "hash": "0xca464cd6e3a192b05f33eea6c0cbcb194aff6632662a766579776395df96b877"
+                        "hash": "0x8d7cab146390fbed19d62553dca1a4220ea563f95e62a3064dfc62f8abf3c635"
                     },
                     "operations": [
                         {
@@ -176,7 +167,7 @@
                                 "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
                             },
                             "amount": {
-                                "value": 50,
+                                "value": 100,
                                 "currency": {
                                     "symbol": "STX",
                                     "decimals": 6
@@ -198,7 +189,7 @@
                                 "address": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
                             },
                             "amount": {
-                                "value": 50,
+                                "value": 100,
                                 "currency": {
                                     "symbol": "STX",
                                     "decimals": 6
@@ -208,22 +199,17 @@
                     ],
                     "metadata": {
                         "success": true,
-                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000300000000000001150000ee77f4c83bab86e32764dece3fab8ae3ce480fb7a8d08a17491672a4c8fbc5821b8e1e69bbc476d5e3c375af98d0d0138786aafd9dab9561b074fbce9a7de21003020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000002faf080021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e730d73656e642d7374782d6d656d6f000000040100000000000000000000000000000032051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051a7321b74e2b6a7e949e6c4ad313035b166509501702000000096d656d6f2074657374",
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000200000000000000d3000116dbb2e6fe0fd78d748b7d6b99fc1887c4274b4b3b53e5b4eafbd6bd76059f90779141f125dd180ed9d277f1c728747b272e9c8958ccda00f47eff1e77cd22d603020000000100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce050000000005f5e100021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce0e746573742d66756e6374696f6e731673656e642d7374782d656d6265646465642d6d656d6f00000000",
                         "result": "(ok true)",
                         "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-                        "nonce": 3,
-                        "fee": 277,
+                        "nonce": 2,
+                        "fee": 211,
                         "kind": {
                             "type": "ContractCall",
                             "data": {
                                 "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-                                "method": "send-stx-memo",
-                                "args": [
-                                    "u50",
-                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
-                                    "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
-                                    "0x6d656d6f2074657374"
-                                ]
+                                "method": "send-stx-embedded-memo",
+                                "args": []
                             }
                         },
                         "receipt": {
@@ -236,39 +222,35 @@
                                     "data": {
                                         "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
                                         "recipient": "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5",
-                                        "amount": "50"
+                                        "amount": "100"
                                     }
                                 }
                             ]
                         },
-                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx-memo(u50, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5, 0x6d656d6f2074657374)",
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions::send-stx-embedded-memo()",
                         "sponsor": null,
                         "execution_cost": {
                             "write_length": 1,
                             "write_count": 1,
-                            "read_length": 866,
+                            "read_length": 1049,
                             "read_count": 4,
-                            "runtime": 7156
+                            "runtime": 6393
                         },
                         "position": {
-                            "index": 1
+                            "micro_block_identifier": {
+                                "index": 0,
+                                "hash": "0xff23f8ce370af015f8b2dbbf09872d60acd013c9e69b3927d6a147da5ab64642"
+                            },
+                            "index": 0
                         }
                     }
                 }
             ],
             "metadata": {
-                "bitcoin_anchor_block_identifier": {
-                    "index": 118,
-                    "hash": "0x3d6d46e231e26f38595ed517321f7a5109f307061f13d5a04e5f347d8046309a"
-                },
-                "pox_cycle_index": 1,
-                "pox_cycle_position": 7,
-                "pox_cycle_length": 10,
-                "confirm_microblock_identifier": {
-                    "index": 0,
-                    "hash": "0x117d7b29ced1caccf2628f75a2d53d754d1d8e19181de9d5b15aac30dd62a232"
-                },
-                "stacks_block_hash": "0xf7f665d40cf4aedeff586867293a5382526ba7fa123ce50bb6e31e0249d9c900"
+                "anchor_block_identifier": {
+                    "index": 8,
+                    "hash": "0x46e44007341cd2b2e9cb8992680d4f994ab1d0d66f1a935ab32ed5ab4df8992f"
+                }
             }
         }
     ],
@@ -278,7 +260,7 @@
         "predicate": {
             "scope": "contract_call",
             "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-            "method": "send-stx-memo"
+            "method": "send-stx-embedded-memo"
         },
         "is_streaming_blocks": true
     }

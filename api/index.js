@@ -12,7 +12,7 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
 
-app.post("/api/decode/hello", async (req, res) => {
+app.post("/api/send-stx-embedded-memo", async (req, res) => {
   console.log('/////////////////////////////////////     Start    /////////////////////////////////////')
   const events = req.body;
   console.log(JSON.stringify(events))
@@ -60,7 +60,7 @@ app.post("/api/decode/hello", async (req, res) => {
   res.status(200).send({ message: "Hello!" });
 });
 
-app.post("/api/decode/hello", async (req, res) => {
+app.post("/api/decode/send-stx-embedded-memo", async (req, res) => {
   console.log('/////////////////////////////////////     Decode Start    /////////////////////////////////////')
   const events = req.body;
   console.log(JSON.stringify(events))
