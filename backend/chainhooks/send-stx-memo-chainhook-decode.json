@@ -1,7 +1,7 @@
 {
     "chain": "stacks",
     "uuid": "1",
-    "name": "hello-test chainhook",
+    "name": "test-functions-v2 chainhook",
     "version": 1,
     "networks": {
       "devnet": {
@@ -10,7 +10,7 @@
         "end_block": 100,
         "if_this": {
           "scope": "contract_call",
-          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
+          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
           "method": "send-stx-memo"
         },
         "then_that": {

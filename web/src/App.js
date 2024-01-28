@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StacksMocknet, StacksDevnet} from '@stacks/network';
+import { StacksMocknet, StacksDevnet, StacksTestnet} from '@stacks/network';
 import { 
   makeContractCall,
   broadcastTransaction,
@@ -14,13 +14,45 @@ import {
   makeStandardSTXPostCondition,
 } from '@stacks/transactions';
 
-//Stacks network
-const network = new StacksMocknet();
+  //Stacks network
+  const mocknet = new StacksMocknet();
+  const testnet = new StacksTestnet();
 
-//Devnet STX Address
+  //STX Addresses
 const stxAddress = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM';
-const stxAddressTwo = 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5';
-const contractName = 'test-functions'
+const stxAddressDevnet = 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5';
+const stxAddressTestnet = 'ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50';
+const contractNameDev = 'test-functions';
+const contractNameTest = 'test-functions-v2';
+
+function App() {
+  const [network, setNetwork] = useState(mocknet)
+  const [contractName, setContractName] = useState(contractNameDev)
+  const [broadcastResponse, setBroadcastResponse] = useState()
+  const [stxRecipient, setStxRecipient] = useState(stxAddressDevnet)
+
+const handleNetworkDev = () => {
+  setNetwork(mocknet)
+}
+const handleNetworkTest = () => {
+  setNetwork(testnet)
+}
+
+const handleStxRecipientDevnet = () => {
+  setStxRecipient(stxAddressDevnet)
+}
+
+const handleStxRecipientTestnet = () => {
+  setStxRecipient(stxAddressTestnet)
+}
+
+const handleContractDevnet = () => {
+  setContractName(contractNameDev)
+}
+
+const handleContractTestnet = () => {
+  setContractName(contractNameTest)
+}
 
 //Transaction Options
 
@@ -77,11 +109,11 @@ const nftId = 5
 
 const mintNftFunctionArguments = [
   uintCV(nftId),
-  standardPrincipalCV(stxAddressTwo)
+  standardPrincipalCV(stxRecipient)
 ];
 
 const assetContract = stxAddress
-const postConditionAddressNFT = stxAddressTwo //recipient
+const postConditionAddressNFT = stxRecipient //recipient
 const nftPostConditionCode = NonFungibleConditionCode.DoesNotSend
 const assetContractName = contractName
 const assetName = 'doc-nft'
@@ -126,7 +158,7 @@ const postConditionAddressStx = stxAddress //recipient
 const sendStxFunctionArguments = [
   uintCV(50),
   standardPrincipalCV(stxAddress),
-  standardPrincipalCV(stxAddressTwo)
+  standardPrincipalCV(stxRecipient)
 ];
 
 const sendStxPostConditions = [
@@ -160,7 +192,7 @@ const postConditionAddressStxMemo = stxAddress //recipient
 const sendStxMemoFunctionArguments = [
   uintCV(50),
   standardPrincipalCV(stxAddress),
-  standardPrincipalCV(stxAddressTwo),
+  standardPrincipalCV(stxRecipient),
   bufferCVFromString('memo test')
 ];
 
@@ -211,9 +243,6 @@ const sendStxEmbeddedMemo = {
   anchorMode: AnchorMode.Any,
 };
 
-function App() {
-  const [ broadcastResponse, setBroadcastResponse ] = useState()
-
   const handleGetTransaction = async (transactionOptions) => {
     try {
       const response = await makeContractCall(transactionOptions);
@@ -229,9 +258,14 @@ function App() {
   return (
     <>
       <h1>Stack.JS Web Test App</h1>
+      <button onClick={handleNetworkDev}>Change to Dev Network</button>
+      <button onClick={handleNetworkTest}>Change to Test Network</button>
+      <button onClick={handleStxRecipientDevnet}>Change devnet Recipient</button>
+      <button onClick={handleStxRecipientTestnet}>Change testnet Recipient</button>
       <ul>
+        <li>{network.coreApiUrl}</li>
         <li>address 1: {stxAddress}</li>
-        <li>address 2: {stxAddressTwo}</li>
+        <li>recipient address: {stxRecipient}</li>
         <li>contract: {contractName}</li>
       </ul>
       <div>
