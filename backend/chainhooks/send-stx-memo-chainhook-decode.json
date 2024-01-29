@@ -10,7 +10,7 @@
         "end_block": 100,
         "if_this": {
           "scope": "contract_call",
-          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
           "method": "send-stx-memo"
         },
         "then_that": {

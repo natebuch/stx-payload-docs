@@ -25,11 +25,42 @@ const stxAddressTestnet = 'ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50';
 const contractNameDev = 'test-functions';
 const contractNameTest = 'test-functions-v2';
 
+//Devnet test-functions
+const devnetFunctions = {
+  network: mocknet,
+  networkString: "devnet",
+  contractName: contractNameDev,
+  recipient: stxAddressDevnet
+}
+
+
+//Testnet test-Functions-v2
+const testnetFunctionsV2 = {
+  network: testnet,
+  networkString: "testnet",
+  contractName: contractNameTest,
+  recipient: stxAddressTestnet
+}
+
 function App() {
   const [network, setNetwork] = useState(mocknet)
+  const [networkString, setNetworkString] = useState(devnetFunctions.networkString)
   const [contractName, setContractName] = useState(contractNameDev)
   const [broadcastResponse, setBroadcastResponse] = useState()
   const [stxRecipient, setStxRecipient] = useState(stxAddressDevnet)
+
+const handleSetTestnet = () => {
+  setNetwork(testnetFunctionsV2.network)
+  setNetworkString(testnetFunctionsV2.networkString)
+  setContractName(testnetFunctionsV2.contractName)
+  setStxRecipient(testnetFunctionsV2.recipient)
+}
+const handleSetDevnet = () => {
+  setNetwork(devnetFunctions.network)
+  setNetworkString(devnetFunctions.networkString)
+  setContractName(devnetFunctions.contractName)
+  setStxRecipient(devnetFunctions.recipient)
+}
 
 const handleNetworkDev = () => {
   setNetwork(mocknet)
@@ -254,20 +285,40 @@ const sendStxEmbeddedMemo = {
       console.log(e)
     }
   }; 
-
+    
   return (
     <>
       <h1>Stack.JS Web Test App</h1>
-      <button onClick={handleNetworkDev}>Change to Dev Network</button>
-      <button onClick={handleNetworkTest}>Change to Test Network</button>
-      <button onClick={handleStxRecipientDevnet}>Change devnet Recipient</button>
-      <button onClick={handleStxRecipientTestnet}>Change testnet Recipient</button>
+      { 
+        networkString === "testnet" ? <h1>TestNet</h1> : <h1>DevNet</h1>
+      }
+      <div>
+        <h5>Switch All Configurables:</h5>
+        <button onClick={handleSetDevnet}>Change to Dev</button>
+        <button onClick={handleSetTestnet}>Change to Test</button>
+      </div>
+      <div>
+        <h5>Switch Networks:</h5>
+        <button onClick={handleNetworkDev}>Dev Network</button>
+        <button onClick={handleNetworkTest}>Test Network</button>
+      </div>
+      <div>
+      <h5>Switch Recipients:</h5>
+        <button onClick={handleStxRecipientDevnet}>Devnet Recipient</button>
+        <button onClick={handleStxRecipientTestnet}>Testnet Recipient</button>
+      </div>
+      <div>
+      <h5>Switch Contracts:</h5>
+        <button onClick={handleContractDevnet}>Devnet Contract</button>
+        <button onClick={handleContractTestnet}>Testnet Contract</button>
+      </div>
       <ul>
         <li>{network.coreApiUrl}</li>
         <li>address 1: {stxAddress}</li>
         <li>recipient address: {stxRecipient}</li>
         <li>contract: {contractName}</li>
       </ul>
+      <h5>Function Calls</h5>
       <div>
         <button onClick={ () => handleGetTransaction(helloWorld)}>Hello!</button>
       </div>
@@ -287,7 +338,7 @@ const sendStxEmbeddedMemo = {
         <button onClick={ () => handleGetTransaction(sendStxEmbeddedMemo)}>Send Embedded STX Memo</button>
       </div>
       <div>
-        {JSON.stringify(broadcastResponse)}
+        <h5>Transaction: {JSON.stringify(broadcastResponse)}</h5>
       </div>
     </>
   );
