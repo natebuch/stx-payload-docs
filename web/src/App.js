@@ -290,7 +290,17 @@ const sendStxEmbeddedMemo = {
     <>
       <h1>Stack.JS Web Test App</h1>
       { 
-        networkString === "testnet" ? <h1>TestNet</h1> : <h1>DevNet</h1>
+        networkString === "testnet" ? 
+        <span style={{backgroundColor: "green",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          borderRadius: "5px"}}>TestNet</span> : 
+          <span style={{backgroundColor: "green",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          borderRadius: "5px"}}>DevNet</span>
       }
       <div>
         <h5>Switch All Configurables:</h5>
