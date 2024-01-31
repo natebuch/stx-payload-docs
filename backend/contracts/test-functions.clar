@@ -21,7 +21,7 @@
 ;;
 
 ;; public functions
-(define-public (hello (memo (buff 34)))
+(define-public (hello-memo (memo (buff 34)))
   (begin 
     (print memo)
     (ok true)
@@ -44,6 +44,9 @@
   (stx-transfer-memo? amount sender recipient memo)
 )
 
+(define-public (send-stx-embedded-memo)
+  (stx-transfer-memo? u100 tx-sender 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5 (unwrap-panic (to-consensus-buff? "Here lies memo")))
+)
 ;; read only functions
 ;;
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StacksMocknet, StacksDevnet} from '@stacks/network';
+import { StacksMocknet, StacksDevnet, StacksTestnet} from '@stacks/network';
 import { 
   makeContractCall,
   broadcastTransaction,
@@ -14,13 +14,76 @@ import {
   makeStandardSTXPostCondition,
 } from '@stacks/transactions';
 
-//Stacks network
-const network = new StacksMocknet();
+  //Stacks network
+  const mocknet = new StacksMocknet();
+  const testnet = new StacksTestnet();
 
-//Devnet STX Address
+  //STX Addresses
 const stxAddress = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM';
-const stxAddressTwo = 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5';
-const contractName = 'test-functions'
+const stxAddressDevnet = 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5';
+const stxAddressTestnet = 'ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50';
+const contractNameDev = 'test-functions';
+const contractNameTest = 'test-functions-v2';
+
+//Devnet test-functions
+const devnetFunctions = {
+  network: mocknet,
+  networkString: "devnet",
+  contractName: contractNameDev,
+  recipient: stxAddressDevnet
+}
+
+
+//Testnet test-Functions-v2
+const testnetFunctionsV2 = {
+  network: testnet,
+  networkString: "testnet",
+  contractName: contractNameTest,
+  recipient: stxAddressTestnet
+}
+
+function App() {
+  const [network, setNetwork] = useState(mocknet)
+  const [networkString, setNetworkString] = useState(devnetFunctions.networkString)
+  const [contractName, setContractName] = useState(contractNameDev)
+  const [broadcastResponse, setBroadcastResponse] = useState()
+  const [stxRecipient, setStxRecipient] = useState(stxAddressDevnet)
+
+const handleSetTestnet = () => {
+  setNetwork(testnetFunctionsV2.network)
+  setNetworkString(testnetFunctionsV2.networkString)
+  setContractName(testnetFunctionsV2.contractName)
+  setStxRecipient(testnetFunctionsV2.recipient)
+}
+const handleSetDevnet = () => {
+  setNetwork(devnetFunctions.network)
+  setNetworkString(devnetFunctions.networkString)
+  setContractName(devnetFunctions.contractName)
+  setStxRecipient(devnetFunctions.recipient)
+}
+
+const handleNetworkDev = () => {
+  setNetwork(mocknet)
+}
+const handleNetworkTest = () => {
+  setNetwork(testnet)
+}
+
+const handleStxRecipientDevnet = () => {
+  setStxRecipient(stxAddressDevnet)
+}
+
+const handleStxRecipientTestnet = () => {
+  setStxRecipient(stxAddressTestnet)
+}
+
+const handleContractDevnet = () => {
+  setContractName(contractNameDev)
+}
+
+const handleContractTestnet = () => {
+  setContractName(contractNameTest)
+}
 
 //Transaction Options
 
@@ -77,11 +140,11 @@ const nftId = 5
 
 const mintNftFunctionArguments = [
   uintCV(nftId),
-  standardPrincipalCV(stxAddressTwo)
+  standardPrincipalCV(stxRecipient)
 ];
 
 const assetContract = stxAddress
-const postConditionAddressNFT = stxAddressTwo //recipient
+const postConditionAddressNFT = stxRecipient //recipient
 const nftPostConditionCode = NonFungibleConditionCode.DoesNotSend
 const assetContractName = contractName
 const assetName = 'doc-nft'
@@ -126,7 +189,7 @@ const postConditionAddressStx = stxAddress //recipient
 const sendStxFunctionArguments = [
   uintCV(50),
   standardPrincipalCV(stxAddress),
-  standardPrincipalCV(stxAddressTwo)
+  standardPrincipalCV(stxRecipient)
 ];
 
 const sendStxPostConditions = [
@@ -160,7 +223,7 @@ const postConditionAddressStxMemo = stxAddress //recipient
 const sendStxMemoFunctionArguments = [
   uintCV(50),
   standardPrincipalCV(stxAddress),
-  standardPrincipalCV(stxAddressTwo),
+  standardPrincipalCV(stxRecipient),
   bufferCVFromString('memo test')
 ];
 
@@ -183,8 +246,33 @@ const sendStxMemo = {
   anchorMode: AnchorMode.Any,
 };
 
-function App() {
-  const [ broadcastResponse, setBroadcastResponse ] = useState()
+// (define-public (send-stx-embedded-memo)
+//   (stx-transfer-memo? u100 tx-sender 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5 (unwrap-panic (to-consensus-buff? "Here lies memo")))
+// )
+const stxEmbeddedMemoConditionCode = FungibleConditionCode.LessEqual;
+const stxEmbeddedMemoConditionAmount = 100000000; // denoted in microstacks
+
+const sendStxEmbeddedMemoFunctionArguments = [
+];
+
+const sendStxEmbeddedMemoPostConditions = [
+  makeStandardSTXPostCondition(
+    postConditionAddressStxMemo, //the sender
+    stxEmbeddedMemoConditionCode,
+    stxEmbeddedMemoConditionAmount  
+  )
+];
+
+const sendStxEmbeddedMemo = {
+  contractAddress: stxAddress,
+  contractName: contractName,
+  functionName: 'send-stx-embedded-memo',
+  functionArgs: sendStxEmbeddedMemoFunctionArguments,
+  postConditions: sendStxEmbeddedMemoPostConditions,
+  senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
+  network,
+  anchorMode: AnchorMode.Any,
+};
 
   const handleGetTransaction = async (transactionOptions) => {
     try {
@@ -197,15 +285,50 @@ function App() {
       console.log(e)
     }
   }; 
-
+    
   return (
     <>
       <h1>Stack.JS Web Test App</h1>
+      { 
+        networkString === "testnet" ? 
+        <span style={{backgroundColor: "#ed7777",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          borderRadius: "5px"}}>TestNet</span> : 
+          <span style={{backgroundColor: "#009966",
+          color: "white",
+          padding: "4px 8px",
+          textAlign: "center",
+          borderRadius: "5px"}}>DevNet</span>
+      }
+      <div>
+        <h5>Switch All Configurables:</h5>
+        <button onClick={handleSetDevnet}>Change to Dev</button>
+        <button onClick={handleSetTestnet}>Change to Test</button>
+      </div>
+      <div>
+        <h5>Switch Networks:</h5>
+        <button onClick={handleNetworkDev}>Dev Network</button>
+        <button onClick={handleNetworkTest}>Test Network</button>
+      </div>
+      <div>
+      <h5>Switch Recipients:</h5>
+        <button onClick={handleStxRecipientDevnet}>Devnet Recipient</button>
+        <button onClick={handleStxRecipientTestnet}>Testnet Recipient</button>
+      </div>
+      <div>
+      <h5>Switch Contracts:</h5>
+        <button onClick={handleContractDevnet}>Devnet Contract</button>
+        <button onClick={handleContractTestnet}>Testnet Contract</button>
+      </div>
       <ul>
+        <li>{network.coreApiUrl}</li>
         <li>address 1: {stxAddress}</li>
-        <li>address 2: {stxAddressTwo}</li>
+        <li>recipient address: {stxRecipient}</li>
         <li>contract: {contractName}</li>
       </ul>
+      <h5>Function Calls</h5>
       <div>
         <button onClick={ () => handleGetTransaction(helloWorld)}>Hello!</button>
       </div>
@@ -222,7 +345,10 @@ function App() {
         <button onClick={ () => handleGetTransaction(sendStxMemo)}>Send STX Memo</button>
       </div>
       <div>
-        {JSON.stringify(broadcastResponse)}
+        <button onClick={ () => handleGetTransaction(sendStxEmbeddedMemo)}>Send Embedded STX Memo</button>
+      </div>
+      <div>
+        <h5>Transaction: {JSON.stringify(broadcastResponse)}</h5>
       </div>
     </>
   );

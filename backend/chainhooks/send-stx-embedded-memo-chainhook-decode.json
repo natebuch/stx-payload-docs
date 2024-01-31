@@ -10,12 +10,12 @@
         "end_block": 100,
         "if_this": {
           "scope": "contract_call",
-          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-          "method": "send-stx-memo"
+          "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+          "method": "send-stx-embedded-memo"
         },
         "then_that": {
           "http_post": {
-            "url": "http://localhost:3001/api/decode/send-stx-memo",
+            "url": "http://localhost:3001/api/decode/send-stx-embedded-memo",
             "authorization_header": "1234"
           }
         } 	

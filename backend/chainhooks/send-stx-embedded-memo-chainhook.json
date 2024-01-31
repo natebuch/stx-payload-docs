@@ -1,21 +1,20 @@
 {
     "chain": "stacks",
     "uuid": "1",
-    "name": "test-functions-v2 chainhook",
+    "name": "hello-test chainhook",
     "version": 1,
     "networks": {
       "devnet": {
-        "decode_clarity_values": true,
         "start_block": 0,
         "end_block": 100,
         "if_this": {
           "scope": "contract_call",
           "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions",
-          "method": "send-stx-memo"
+          "method": "send-stx-embedded-memo"
         },
         "then_that": {
           "http_post": {
-            "url": "http://localhost:3001/api/decode/send-stx-memo",
+            "url": "http://localhost:3001/api/send-stx-embedded-memo",
             "authorization_header": "1234"
           }
         } 	

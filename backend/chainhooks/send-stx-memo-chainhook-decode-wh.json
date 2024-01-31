@@ -15,7 +15,7 @@
         },
         "then_that": {
           "http_post": {
-            "url": "http://localhost:3001/api/decode/send-stx-memo",
+            "url": "https://webhook.site/7a117000-b83d-4350-ac32-a0d8e4fbe3af",
             "authorization_header": "1234"
           }
         } 	
