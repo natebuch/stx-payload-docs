@@ -1,0 +1,279 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "hash": "0x85e30d4f05d3890f6ac24cf8ce6c723632f3a18a6eb6844c0d6779662e06355d",
+                "index": 145200
+            },
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "hash": "0x0000000007b2f94fce28daae4e9546884b24a7ebdb6fdb3d464e6eeade26dfee",
+                    "index": 2575852
+                },
+                "confirm_microblock_identifier": {
+                    "hash": "0x42727a2ee36039c2c15b1da24a01cfe6ab20fac47e52e269248b0cbaedd19e73",
+                    "index": 2
+                },
+                "pox_cycle_index": 548,
+                "pox_cycle_length": 1050,
+                "pox_cycle_position": 451,
+                "stacks_block_hash": "0x9c318a82acb5c5578782a784e4150304073d5574a1a5911f8c589dc85f91ddb1"
+            },
+            "parent_block_identifier": {
+                "hash": "0x5bfce0e9b0b959776538423a520541e0d4b281c61b666a71f7abb4e964a79a60",
+                "index": 145199
+            },
+            "timestamp": 1706334564,
+            "transactions": [
+                {
+                    "metadata": {
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2::send-stx-memo(u100, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50, 0x4865726520696e206c696573206d656d6f)",
+                        "execution_cost": {
+                            "read_count": 4,
+                            "read_length": 998,
+                            "runtime": 7304,
+                            "write_count": 1,
+                            "write_length": 1
+                        },
+                        "fee": 3000,
+                        "kind": {
+                            "data": {
+                                "args": [
+                                    "u100",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                    "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50",
+                                    "0x4865726520696e206c696573206d656d6f"
+                                ],
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+                                "method": "send-stx-memo"
+                            },
+                            "type": "ContractCall"
+                        },
+                        "nonce": 904,
+                        "position": {
+                            "index": 2
+                        },
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce00000000000003880000000000000bb800015bb7565de5cc58b05ffb8437578f7501943270332f961d380a14199d7697391851d47ec9578b13dd78309baeda22f3d0dc5b0eba25534261ac8794d3e33b5a7d030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce11746573742d66756e6374696f6e732d76320d73656e642d7374782d6d656d6f000000040100000000000000000000000000000064051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051ab3a14500ad8ac4e6d823ab20fd2c6d1369aa5bb702000000114865726520696e206c696573206d656d6f",
+                        "receipt": {
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "data": {
+                                        "amount": "100",
+                                        "recipient": "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50",
+                                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                                    },
+                                    "type": "STXTransferEvent"
+                                }
+                            ],
+                            "mutated_assets_radius": [],
+                            "mutated_contracts_radius": []
+                        },
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "sponsor": null,
+                        "success": false
+                    },
+                    "operations": [
+                        {
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "currency": {
+                                    "decimals": 6,
+                                    "symbol": "STX"
+                                },
+                                "value": 100
+                            },
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 1
+                                }
+                            ],
+                            "status": "SUCCESS",
+                            "type": "DEBIT"
+                        },
+                        {
+                            "account": {
+                                "address": "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50"
+                            },
+                            "amount": {
+                                "currency": {
+                                    "decimals": 6,
+                                    "symbol": "STX"
+                                },
+                                "value": 100
+                            },
+                            "operation_identifier": {
+                                "index": 1
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 0
+                                }
+                            ],
+                            "status": "SUCCESS",
+                            "type": "CREDIT"
+                        }
+                    ],
+                    "transaction_identifier": {
+                        "hash": "0x9cbf434f11b2602d3319f7dfea712a9438c8607b21de42b3cedb4116d947b827"
+                    }
+                }
+            ]
+        }
+    ],
+    "chainhook": {
+        "is_streaming_blocks": false,
+        "predicate": {
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+            "method": "send-stx-memo",
+            "scope": "contract_call"
+        },
+        "uuid": "1"
+    },
+    "rollback": []
+}{
+    "apply": [
+        {
+            "block_identifier": {
+                "hash": "0x85e30d4f05d3890f6ac24cf8ce6c723632f3a18a6eb6844c0d6779662e06355d",
+                "index": 145200
+            },
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "hash": "0x0000000007b2f94fce28daae4e9546884b24a7ebdb6fdb3d464e6eeade26dfee",
+                    "index": 2575852
+                },
+                "confirm_microblock_identifier": {
+                    "hash": "0x42727a2ee36039c2c15b1da24a01cfe6ab20fac47e52e269248b0cbaedd19e73",
+                    "index": 2
+                },
+                "pox_cycle_index": 548,
+                "pox_cycle_length": 1050,
+                "pox_cycle_position": 451,
+                "stacks_block_hash": "0x9c318a82acb5c5578782a784e4150304073d5574a1a5911f8c589dc85f91ddb1"
+            },
+            "parent_block_identifier": {
+                "hash": "0x5bfce0e9b0b959776538423a520541e0d4b281c61b666a71f7abb4e964a79a60",
+                "index": 145199
+            },
+            "timestamp": 1706334564,
+            "transactions": [
+                {
+                    "metadata": {
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2::send-stx-memo(u100, ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM, ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50, 0x4865726520696e206c696573206d656d6f)",
+                        "execution_cost": {
+                            "read_count": 4,
+                            "read_length": 998,
+                            "runtime": 7304,
+                            "write_count": 1,
+                            "write_length": 1
+                        },
+                        "fee": 3000,
+                        "kind": {
+                            "data": {
+                                "args": [
+                                    "u100",
+                                    "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                                    "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50",
+                                    "0x4865726520696e206c696573206d656d6f"
+                                ],
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+                                "method": "send-stx-memo"
+                            },
+                            "type": "ContractCall"
+                        },
+                        "nonce": 904,
+                        "position": {
+                            "index": 2
+                        },
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce00000000000003880000000000000bb800015bb7565de5cc58b05ffb8437578f7501943270332f961d380a14199d7697391851d47ec9578b13dd78309baeda22f3d0dc5b0eba25534261ac8794d3e33b5a7d030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce11746573742d66756e6374696f6e732d76320d73656e642d7374782d6d656d6f000000040100000000000000000000000000000064051a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce051ab3a14500ad8ac4e6d823ab20fd2c6d1369aa5bb702000000114865726520696e206c696573206d656d6f",
+                        "receipt": {
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "data": {
+                                        "amount": "100",
+                                        "recipient": "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50",
+                                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                                    },
+                                    "type": "STXTransferEvent"
+                                }
+                            ],
+                            "mutated_assets_radius": [],
+                            "mutated_contracts_radius": []
+                        },
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "sponsor": null,
+                        "success": false
+                    },
+                    "operations": [
+                        {
+                            "account": {
+                                "address": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+                            },
+                            "amount": {
+                                "currency": {
+                                    "decimals": 6,
+                                    "symbol": "STX"
+                                },
+                                "value": 100
+                            },
+                            "operation_identifier": {
+                                "index": 0
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 1
+                                }
+                            ],
+                            "status": "SUCCESS",
+                            "type": "DEBIT"
+                        },
+                        {
+                            "account": {
+                                "address": "ST2ST2H80NP5C9SPR4ENJ1Z9CDM9PKAJVPYWPQZ50"
+                            },
+                            "amount": {
+                                "currency": {
+                                    "decimals": 6,
+                                    "symbol": "STX"
+                                },
+                                "value": 100
+                            },
+                            "operation_identifier": {
+                                "index": 1
+                            },
+                            "related_operations": [
+                                {
+                                    "index": 0
+                                }
+                            ],
+                            "status": "SUCCESS",
+                            "type": "CREDIT"
+                        }
+                    ],
+                    "transaction_identifier": {
+                        "hash": "0x9cbf434f11b2602d3319f7dfea712a9438c8607b21de42b3cedb4116d947b827"
+                    }
+                }
+            ]
+        }
+    ],
+    "chainhook": {
+        "is_streaming_blocks": false,
+        "predicate": {
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v2",
+            "method": "send-stx-memo",
+            "scope": "contract_call"
+        },
+        "uuid": "1"
+    },
+    "rollback": []
+}

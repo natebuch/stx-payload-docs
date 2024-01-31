@@ -71,7 +71,7 @@ app.listen(port, () => {
 //   res.status(200).send({ message: "Hello!" });
 // });
 
-app.post("/api/decode/send-stx-memo", async (req, res) => {
+app.post("/api/decode/send-stx", async (req, res) => {
   console.log('/////////////////////////////////////     STX MEMO Decode Start    /////////////////////////////////////')
   const events = req.body;
   console.log(JSON.stringify(events))
@@ -82,13 +82,4 @@ app.post("/api/decode/send-stx-memo", async (req, res) => {
   res.status(200).send({ message: "Hello!" });
 });
 
-app.post("/api/decode/send-stx-embedded-memo", async (req, res) => {
-  console.log('/////////////////////////////////////    STX Embedded Memo Decode Start    /////////////////////////////////////')
-  const events = req.body;
-  console.log(JSON.stringify(events))
-  console.log('                       ')
-  console.log('**********************************************************************************************************')
-  console.log('                       ')
-  // Send a response back to Chainhook to acknowledge receipt of the event
-  res.status(200).send({ message: "Hello!" });
-});
+

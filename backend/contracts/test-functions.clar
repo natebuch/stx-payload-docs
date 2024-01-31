@@ -21,7 +21,7 @@
 ;;
 
 ;; public functions
-(define-public (hello (memo (buff 34)))
+(define-public (hello-memo (memo (buff 34)))
   (begin 
     (print memo)
     (ok true)
