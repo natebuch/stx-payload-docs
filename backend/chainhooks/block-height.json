@@ -1,0 +1,22 @@
+{
+  "chain": "stacks",
+  "uuid": "2",
+  "name": "Block Height",
+  "version": 1,
+  "networks": {
+    "testnet": {
+      "start_block": 3,
+      "decode_clarity_values": true,
+      "expire_after_occurrence": 1,
+      "if_this": {
+        "scope": "block_height",
+        "higher_than": 140000
+      },
+      "then_that": {
+        "file_append": {
+          "path": "./block-height.json"
+        }
+      }
+    } 
+  }
+}

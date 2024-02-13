@@ -1,0 +1,25 @@
+{
+	"chain": "stacks",
+	"uuid": "7",
+	"name": "Print Event",
+	"version": 1,
+	"networks": {
+    "testnet": {
+      "start_block": 0,
+      "decode_clarity_values": true,
+      "include_contract_abi": true,
+      "expire_after_occurrence": 1,
+      "if_this": {
+        "scope": "print_event",
+        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4",
+        "contains": "hello"
+      },
+      "then_that": {
+        "http_post": {
+          "url": "https://webhook.site/b65fff00-606e-4de9-bbda-49fdcad83143",
+          "authorization_header": "12345"
+        }
+      }
+    }
+	}
+}

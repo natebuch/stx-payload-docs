@@ -89,25 +89,26 @@ function App() {
     setContractName(contractNameTest)
   }
 
-  //Transaction Options
+//Transaction Options
 
-  // Clarity function
-  // (define-public (hello)
-  //   (begin 
-  //     (print "Hello World!")
-  //     (ok true)
-  //   )
-  // )
-  const helloWorldFuncArgs = [bufferCVFromString("Hello Worlds")];
+//   Clarity Function
+//   (define-public (hello-memo (memo (buff 34)))
+//     (begin 
+//       (print memo)
+//       (ok true)
+//     )  
+//   )
 
-  const helloWorldPostConditions = [];
+  const helloMemoFuncArgs = [bufferCVFromString("Hello Worlds")];
 
-  const helloWorld = {
+  const helloMemoPostConditions = [];
+
+  const helloMemo = {
     contractAddress: stxAddress,
     contractName: contractName,
-    functionName: 'hello',
-    functionArgs: helloWorldFuncArgs,
-    postConditions: helloWorldPostConditions,
+    functionName: 'hello-memo',
+    functionArgs: helloMemoFuncArgs,
+    postConditions: helloMemoPostConditions,
     senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
     network,
     anchorMode: AnchorMode.Any,
@@ -373,7 +374,7 @@ function App() {
       </ul>
       <h5>Function Calls</h5>
       <div>
-        <button onClick={ () => handleGetTransaction(helloWorld)}>Hello!</button>
+        <button onClick={ () => handleGetTransaction(helloMemo)}>HelloMemo!</button>
       </div>
       <div>
         <button onClick={ () => handleGetTransaction(mintFt)}>Mint FT</button>

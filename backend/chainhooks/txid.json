@@ -1,0 +1,23 @@
+{
+	"chain": "stacks",
+	"uuid": "6",
+	"name": "Transaction Id",
+	"version": 1,
+	"networks": {
+    "testnet": {
+      "start_block": 0,
+      "decode_clarity_values": true,
+      "include_contract_abi": true,
+      "expire_after_occurrence": 1,
+      "if_this": {
+          "scope": "txid",
+          "equals": "0xa97d963ed38565c72f84a631cd5975f468232e376640218f905795f8c6a166ca"
+      },
+      "then_that": {
+        "file_append": {
+          "path": "./txid.json"
+        }
+      }
+    }
+	}
+}
