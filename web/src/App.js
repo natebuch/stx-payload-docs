@@ -89,7 +89,27 @@ function App() {
     setContractName(contractNameTest)
   }
 
-//Transaction Options
+// (define-public (hello-world)
+//   (begin 
+//     (print "Hello World")
+//     (ok true)
+//   )
+// )
+
+const helloWorldFunctionArgs = [];
+
+const helloWorldPostConditions = [];
+
+const helloWorld = {
+  contractAddress: stxAddress,
+  contractName: contractName,
+  functionName: 'hello-world',
+  functionArgs: helloWorldFunctionArgs,
+  postConditions: helloWorldPostConditions,
+  senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
+  network,
+  anchorMode: AnchorMode.Any,
+};
 
 //   Clarity Function
 //   (define-public (hello-memo (memo (buff 34)))
@@ -99,7 +119,7 @@ function App() {
 //     )  
 //   )
 
-  const helloMemoFuncArgs = [bufferCVFromString("Hello Worlds")];
+  const helloMemoFunctionArgs = [bufferCVFromString("Hello Worlds")];
 
   const helloMemoPostConditions = [];
 
@@ -107,7 +127,7 @@ function App() {
     contractAddress: stxAddress,
     contractName: contractName,
     functionName: 'hello-memo',
-    functionArgs: helloMemoFuncArgs,
+    functionArgs: helloMemoFunctionArgs,
     postConditions: helloMemoPostConditions,
     senderKey: '753b7cc01a1a2e86221266a154af739463fce51219d97e4f856cd7200c3bd2a601',
     network,
@@ -140,7 +160,6 @@ function App() {
   // (define-public (mint-nft (id uint) (recipient principal))
   //   (nft-mint? doc-nft id recipient)
   // )
-
   const nftId = 5
 
   const mintNftFunctionArguments = [
@@ -186,8 +205,8 @@ function App() {
   // (define-public (send-stx (amount uint) (sender principal) (recipient principal))
   //   (as-contract (stx-transfer? amount sender recipient))
   // )
-  const stxConditionCode = FungibleConditionCode.LessEqual;
-  const stxConditionAmount = 50000000; // denoted in microstacks
+  const stxConditionCode = FungibleConditionCode.Equal;
+  const stxConditionAmount = 10000000; // denoted in microstacks
   const postConditionAddressStx = stxAddress //recipient
 
 
@@ -318,6 +337,8 @@ function App() {
     anchorMode: AnchorMode.Any,
   };
 
+  //Transaction Call
+  //Pass in options for each function
   const handleGetTransaction = async (transactionOptions) => {
     try {
       const response = await makeContractCall(transactionOptions);
@@ -374,7 +395,10 @@ function App() {
       </ul>
       <h5>Function Calls</h5>
       <div>
-        <button onClick={ () => handleGetTransaction(helloMemo)}>HelloMemo!</button>
+        <button onClick={ () => handleGetTransaction(helloWorld)}>Hello World</button>
+      </div>
+      <div>
+        <button onClick={ () => handleGetTransaction(helloMemo)}>Hello World Memo</button>
       </div>
       <div>
         <button onClick={ () => handleGetTransaction(mintFt)}>Mint FT</button>

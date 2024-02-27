@@ -15,4 +15,11 @@ plan:
             path: contracts/test-functions.clar
             anchor-block-only: true
             clarity-version: 2
+        - contract-publish:
+            contract-name: test-functions-v4
+            expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            cost: 15100
+            path: contracts/test-functions-v4.clar
+            anchor-block-only: true
+            clarity-version: 2
       epoch: "2.4"

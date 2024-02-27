@@ -71,8 +71,8 @@ app.listen(port, () => {
 //   res.status(200).send({ message: "Hello!" });
 // });
 
-app.post("/api/decode/send-stx", async (req, res) => {
-  console.log('/////////////////////////////////////     STX MEMO Decode Start    /////////////////////////////////////')
+app.post("/api", async (req, res) => {
+  console.log('/////////////////////////////////////   Start   /////////////////////////////////////')
   const events = req.body;
   console.log(JSON.stringify(events))
   console.log('                       ')

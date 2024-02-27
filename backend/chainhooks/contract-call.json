@@ -1,13 +1,12 @@
 {
 	"chain": "stacks",
-	"uuid": "1",
+	"uuid": "8",
 	"name": "Contract Call",
 	"version": 1,
 	"networks": {
-    "testnet": {
+    "devnet": {
       "start_block": 0,
       "decode_clarity_values": true,
-      "include_contract_abi": true,
       "expire_after_occurrence": 1,
       "if_this": {
           "scope": "contract_call",

@@ -18,19 +18,6 @@
           "authorization_header": "12345"
         }
       }
-    },"testnet": {
-      "start_block": 140000,
-      "decode_clarity_values": true,
-      "expire_after_occurrence": 1,
-      "if_this": {
-        "scope": "stx_event",
-        "actions": ["transfer"]
-      },
-      "then_that": {
-        "file_append": {
-          "path": "./stx-event.json"
-        }
-      }
-    } 
+    }
   }
 }

@@ -9,6 +9,11 @@ requirements = []
 path = 'contracts/test-functions.clar'
 clarity_version = 2
 epoch = 2.4
+
+[contracts.test-functions-v4]
+path = 'contracts/test-functions-v4.clar'
+clarity_version = 2
+epoch = 2.4
 [repl.analysis]
 passes = ['check_checker']
 

@@ -4,17 +4,18 @@
   "name": "Block Height",
   "version": 1,
   "networks": {
-    "testnet": {
+    "devnet": {
       "start_block": 3,
       "decode_clarity_values": true,
       "expire_after_occurrence": 1,
       "if_this": {
         "scope": "block_height",
-        "higher_than": 140000
+        "higher_than": 3
       },
       "then_that": {
-        "file_append": {
-          "path": "./block-height.json"
+        "http_post": {
+          "url": "https://webhook.site/b65fff00-606e-4de9-bbda-49fdcad83143",
+          "authorization_header": "12345"
         }
       }
     } 

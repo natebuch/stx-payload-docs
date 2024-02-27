@@ -4,15 +4,14 @@
 	"name": "Print Event",
 	"version": 1,
 	"networks": {
-    "testnet": {
+    "devnet": {
       "start_block": 0,
       "decode_clarity_values": true,
-      "include_contract_abi": true,
       "expire_after_occurrence": 1,
       "if_this": {
         "scope": "print_event",
         "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4",
-        "contains": "hello"
+        "contains": "Hello World"
       },
       "then_that": {
         "http_post": {

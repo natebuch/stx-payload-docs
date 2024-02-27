@@ -4,13 +4,13 @@
   "name": "NFT Event Mint",
   "version": 1,
   "networks": {
-    "testnet": {
+    "devnet": {
       "start_block": 0,
       "decode_clarity_values": true,
       "expire_after_occurrence": 1,
       "if_this": {
         "scope": "nft_event",
-        "asset_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4::doc.nft",
+        "asset_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4::doc-nft",
         "actions": ["mint"]
       },
       "then_that": {

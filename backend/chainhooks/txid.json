@@ -4,7 +4,7 @@
 	"name": "Transaction Id",
 	"version": 1,
 	"networks": {
-    "testnet": {
+    "devnet": {
       "start_block": 0,
       "decode_clarity_values": true,
       "include_contract_abi": true,
@@ -14,8 +14,9 @@
           "equals": "0xa97d963ed38565c72f84a631cd5975f468232e376640218f905795f8c6a166ca"
       },
       "then_that": {
-        "file_append": {
-          "path": "./txid.json"
+        "http_post": {
+          "url": "https://webhook.site/b65fff00-606e-4de9-bbda-49fdcad83143",
+          "authorization_header": "12345"
         }
       }
     }

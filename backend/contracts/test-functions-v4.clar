@@ -21,6 +21,13 @@
 ;;
 
 ;; public functions
+(define-public (hello-world)
+  (begin 
+    (print "Hello World")
+    (ok true)
+  )
+)
+
 (define-public (hello-memo (memo (buff 34)))
   (begin 
     (print memo)

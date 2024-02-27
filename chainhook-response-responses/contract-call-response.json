@@ -1,0 +1,91 @@
+{
+    "apply": [
+        {
+            "block_identifier": {
+                "index": 7,
+                "hash": "0xa7f8222f3e4a57f372158d7f8a65dac20593dbce23153727e0df4d889e646814"
+            },
+            "parent_block_identifier": {
+                "index": 6,
+                "hash": "0x2f2e877fd7de660fd596eda09d9aa999f1cc679fda759e5c8c9aba2812a2b27e"
+            },
+            "timestamp": 1708055189,
+            "transactions": [
+                {
+                    "transaction_identifier": {
+                        "hash": "0xb9508a6ddcb440ff0148770410c127c9646ddb6aba3896ae5f6d0c5799dbc338"
+                    },
+                    "operations": [],
+                    "metadata": {
+                        "success": true,
+                        "raw_tx": "0x808000000004006d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce000000000000000200000000000000bb000074a79b61082eacef85d615666a6a7997661fd48460b1593e61f5396da98677d72434c5969b4d65b2290b2f14a85ac2db8a96c6c533e177c2c224b2a54917cf4c030200000000021a6d78de7b0625dfbfc16c3a8a5735f6dc3dc3f2ce11746573742d66756e6374696f6e732d76340a68656c6c6f2d6d656d6f00000001020000000c48656c6c6f20576f726c6473",
+                        "result": "(ok true)",
+                        "sender": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM",
+                        "nonce": 2,
+                        "fee": 187,
+                        "kind": {
+                            "type": "ContractCall",
+                            "data": {
+                                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4",
+                                "method": "hello-memo",
+                                "args": [
+                                    "0x48656c6c6f20576f726c6473"
+                                ]
+                            }
+                        },
+                        "receipt": {
+                            "mutated_contracts_radius": [
+                                "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4"
+                            ],
+                            "mutated_assets_radius": [],
+                            "contract_calls_stack": [],
+                            "events": [
+                                {
+                                    "type": "SmartContractEvent",
+                                    "data": {
+                                        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4",
+                                        "topic": "print",
+                                        "value": "0x48656c6c6f20576f726c6473"
+                                    }
+                                }
+                            ]
+                        },
+                        "description": "invoked: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4::hello-memo(0x48656c6c6f20576f726c6473)",
+                        "sponsor": null,
+                        "execution_cost": {
+                            "write_length": 0,
+                            "write_count": 0,
+                            "read_length": 1425,
+                            "read_count": 3,
+                            "runtime": 3746
+                        },
+                        "position": {
+                            "index": 1
+                        }
+                    }
+                }
+            ],
+            "metadata": {
+                "bitcoin_anchor_block_identifier": {
+                    "index": 109,
+                    "hash": "0x1d0d93857ae693bc470cf4115681bbfbe29cb0328062a127eee5dd59cb58d88a"
+                },
+                "pox_cycle_index": 0,
+                "pox_cycle_position": 8,
+                "pox_cycle_length": 10,
+                "confirm_microblock_identifier": null,
+                "stacks_block_hash": "0x7d64803fd68eaa8786bfecdeee8aa3d4f945083242200f3ecf6d213b84560514"
+            }
+        }
+    ],
+    "rollback": [],
+    "chainhook": {
+        "uuid": "8",
+        "predicate": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.test-functions-v4",
+            "method": "hello-memo"
+        },
+        "is_streaming_blocks": true
+    }
+}
